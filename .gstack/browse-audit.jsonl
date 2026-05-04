@@ -1,0 +1,6 @@
+{"ts":"2026-05-02T13:28:14.630Z","cmd":"newtab","args":"about:blank --json","origin":"about:blank","durationMs":8,"status":"error","hasCookies":false,"mode":"launched","error":"Blocked: scheme \"about:\" is not allowed. Only http:, https:, and file: URLs are permitted."}
+{"ts":"2026-05-02T13:28:14.764Z","cmd":"newtab","args":"about:blank","origin":"about:blank","durationMs":0,"status":"error","hasCookies":false,"mode":"launched","error":"Blocked: scheme \"about:\" is not allowed. Only http:, https:, and file: URLs are permitted."}
+{"ts":"2026-05-02T13:28:19.776Z","cmd":"newtab","args":"--json","origin":"about:blank","durationMs":81,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-02T13:28:19.897Z","cmd":"load-html","args":"--from-file /tmp/make-pdf-browse-9912-ba533a99b1e7.json","origin":"about:blank","durationMs":21,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-02T13:28:23.527Z","cmd":"pdf","args":"/Users/caojian/Projects/WayToAGI/investor-memo.pdf --format letter --margin-top 1in --margin-right 1in --margin-bottom 1in --margin-left 1in --tagged --outline --toc","origin":"about:blank","durationMs":3228,"status":"ok","hasCookies":false,"mode":"launched"}
+{"ts":"2026-05-02T13:28:23.641Z","cmd":"closetab","args":"2","origin":"about:blank","durationMs":5,"status":"ok","hasCookies":false,"mode":"launched"}
