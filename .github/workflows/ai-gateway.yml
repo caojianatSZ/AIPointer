@@ -1,0 +1,35 @@
+name: AI Gateway Daily Pipeline
+
+on:
+  schedule:
+    - cron: '0 2 * * *'     # 每天 UTC 02:00（北京时间 10:00）
+  workflow_dispatch:         # 支持手动触发
+
+env:
+  PYTHON_VERSION: '3.11'
+
+jobs:
+  process:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run AI Gateway Pipeline
+        run: python -m ai_gateway.main
+        env:
+          FEISHU_APP_ID: ${{ secrets.FEISHU_APP_ID }}
+          FEISHU_APP_SECRET: ${{ secrets.FEISHU_APP_SECRET }}
+          CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+          WIKI_SPACE_TOKEN: ${{ secrets.WIKI_SPACE_TOKEN }}
+          BASE_TOKEN: ${{ secrets.BASE_TOKEN }}
+          BASE_TABLE_ID: ${{ secrets.BASE_TABLE_ID }}
+          BASE_CONFIG_RECORD_ID: ${{ secrets.BASE_CONFIG_RECORD_ID }}
+          CLAUDE_MODEL: claude-sonnet-4-20250514
